@@ -1,14 +1,33 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   let addReservation = () => {
 
     let newReserve = {
-      name : $("#customerName").val().trim(),
-      id : $("#customersID").val().trim(),
-      email : $("#customerEmail").val().trim(),
-      phone : $("#customerPhone").val().trim()
-    }
 
-  }
+      customerName: $("#customerName").val().trim(),
+      customerID: $("#customersID").val().trim(),
+      email: $("#customerEmail").val().trim(),
+      phone: $("#customerPhone").val().trim()
 
+    };
+    console.log(newReserve)
+    $.post('/addCustomer', newReserve)
+  };
+
+  $("#customerName").val("");
+  $("#customersID").val("");
+  $("#customerEmail").val("");
+  $("#customerPhone").val("");
+
+  $("#submitInfo").on("click", (event) => {
+
+    event.preventDefault();
+
+    addReservation();
+
+    $("#customerName").val("");
+    $("#customersID").val("");
+    $("#customerEmail").val("");
+    $("#customerPhone").val("");
+  });
 });
