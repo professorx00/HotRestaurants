@@ -30,8 +30,43 @@ app.post('/addCustomer',function(req,res){
 })
 
 app.get('/getTables',function(req,res){
+    let tables = [];
+    if(customers.length>0){
+        for(let x=0;x<5;x++){
+            if(customers[x]){
+               tables.push(customers[x]) 
+            }
+            else{
+                res.json({"results":tables})
+            }
+        }
+
+    }
+    else{
+        return res.json({"results":"No Customers"})
+    }
+})
+
+app.get('/getWaitList',function(req,res){
+    let tables = [];
+    if(customers.length>5){
+        for(let x=5;x<customers.length;x++){
+            if(customers[x]){
+               tables.push(customers[x]) 
+            }
+            else{
+                res.json({"results":tables})
+            }
+            
+        }
+    }
+    else{
+        return res.json({"result":"No Customers"})
+    }
     
 })
+
+
 
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
