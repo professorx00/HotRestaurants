@@ -45,7 +45,7 @@ app.get('/getTables',function(req,res){
     else{
         tables.push("No Customer")
     }
-    res.json({"results":table})
+    res.json({"results":tables})
 });
 
 app.get('/getWaitList',function(req,res){
@@ -60,7 +60,7 @@ app.get('/getWaitList',function(req,res){
     else{
         tables.push("No Customer")
     }
-    res.json({"results":table})
+    res.json({"results":tables})
 });
 
 
