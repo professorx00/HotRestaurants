@@ -1,16 +1,17 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   let addReservation = () => {
 
     let newReserve = {
 
-      customerName : $("#customerName").val().trim(),
-      customerID : $("#customersID").val().trim(),
-      email : $("#customerEmail").val().trim(),
-      phone : $("#customerPhone").val().trim()
+      customerName: $("#customerName").val().trim(),
+      customerID: $("#customersID").val().trim(),
+      email: $("#customerEmail").val().trim(),
+      phone: $("#customerPhone").val().trim()
 
     };
-
+    console.log(newReserve)
+    $.post('/addCustomer', newReserve)
   };
 
   $("#customerName").val("");
@@ -18,12 +19,15 @@ $(document).ready(function() {
   $("#customerEmail").val("");
   $("#customerPhone").val("");
 
-});
+  $("#submitInfo").on("click", (event) => {
 
-$("#submitInfo").on("click", (event) => {
+    event.preventDefault();
 
-  event.preventDefault();
+    addReservation();
 
-  addReservation();
-
+    $("#customerName").val("");
+    $("#customersID").val("");
+    $("#customerEmail").val("");
+    $("#customerPhone").val("");
+  });
 });

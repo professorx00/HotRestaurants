@@ -13,7 +13,7 @@ let customers = [
         customerName: "Johnny Five",
         email: "number5@shortcircut.com",
         phone: "603-554-6798",
-        customerID: 1
+        customerID: 5
     }];
 app.use(express.static('public'))
 
@@ -26,7 +26,9 @@ app.get('/tables', function (req, res) {
 })
 
 app.post('/addCustomer',function(req,res){
-    customers.add(req.body)
+    customers.push(req.body)
+    console.log("added")
+    console.log(req.body)
 })
 
 app.get('/getTables',function(req,res){
