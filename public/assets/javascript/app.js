@@ -10,10 +10,8 @@ $(document).ready(function () {
       phone: $("#customerPhone").val().trim()
 
     };
-
-    console.log(newReserve);
+    console.log(newReserve)
     $.post('/addCustomer', newReserve)
-
   };
 
   $("#customerName").val("");
@@ -27,6 +25,9 @@ $(document).ready(function () {
 
     addReservation();
 
+    $("#customerName").val("");
+    $("#customersID").val("");
+    $("#customerEmail").val("");
+    $("#customerPhone").val("");
   });
-
 });

@@ -15,21 +15,21 @@ let customers = [
         phone: "603-554-6798",
         customerID: 5
     }];
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/reserve', function (req, res) {
     res.sendFile(path.join(path.join(__dirname, "/public/reserve.html")))
-})
+});
 
 app.get('/tables', function (req, res) {
     res.sendFile(path.join(path.join(__dirname, "/public/tables.html")))
-})
+});
 
 app.post('/addCustomer',function(req,res){
     customers.push(req.body)
     console.log("added")
     console.log(req.body)
-})
+});
 
 app.get('/getTables',function(req,res){
     let tables = [];
@@ -38,16 +38,13 @@ app.get('/getTables',function(req,res){
             if(customers[x]){
                tables.push(customers[x]) 
             }
-            else{
-                res.json({"results":tables})
-            }
         }
-
     }
     else{
-        return res.json({"results":"No Customers"})
+        tables.push("No Customer")
     }
-})
+    res.json({"results":tables})
+});
 
 app.get('/getWaitList',function(req,res){
     let tables = [];
@@ -56,17 +53,13 @@ app.get('/getWaitList',function(req,res){
             if(customers[x]){
                tables.push(customers[x]) 
             }
-            else{
-                res.json({"results":tables})
-            }
-            
         }
     }
     else{
-        return res.json({"result":"No Customers"})
+        tables.push("No Customer")
     }
-    
-})
+    res.json({"results":tables})
+});
 
 
 
