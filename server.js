@@ -29,6 +29,10 @@ app.post('/addCustomer',function(req,res){
     customers.add(req.body)
 })
 
+app.get('/getTables',function(req,res){
+    
+})
+
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
