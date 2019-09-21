@@ -1,4 +1,20 @@
+body {
+  color: #ffffff;
+  background: #494848
+}
+
+div.restaurant-header, body.restaurant-main {
+  background: url("../images/restaurant.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%
+}
+
+div.restaurant-header {
+  height: 30rem;
+}
+
 a.page-btn {
   width: 80%;
   margin: 10px;
+  background-color: none;
 }
