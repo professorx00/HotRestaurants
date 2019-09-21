@@ -3,12 +3,27 @@ $(document).ready(function() {
   let addReservation = () => {
 
     let newReserve = {
-      name : $("#customerName").val().trim(),
-      id : $("#customersID").val().trim(),
+
+      customerName : $("#customerName").val().trim(),
+      customerID : $("#customersID").val().trim(),
       email : $("#customerEmail").val().trim(),
       phone : $("#customerPhone").val().trim()
-    }
 
-  }
+    };
+
+  };
+
+  $("#customerName").val("");
+  $("#customersID").val("");
+  $("#customerEmail").val("");
+  $("#customerPhone").val("");
+
+});
+
+$("#submitInfo").on("click", (event) => {
+
+  event.preventDefault();
+
+  addReservation();
 
 });
