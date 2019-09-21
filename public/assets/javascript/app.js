@@ -25,9 +25,5 @@ $(document).ready(function () {
 
     addReservation();
 
-    $("#customerName").val("");
-    $("#customersID").val("");
-    $("#customerEmail").val("");
-    $("#customerPhone").val("");
   });
 });
