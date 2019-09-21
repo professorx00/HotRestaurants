@@ -1,4 +1,15 @@
+body {
+  color: #ffffff;
+}
+
+div.restaurant-header {
+  background: url("../images/restaurant.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 30rem;
+}
+
 a.page-btn {
   width: 80%;
   margin: 10px;
+  background-color: none;
 }
